@@ -2,7 +2,6 @@ package foreign-env
 package gem
 package https://github.com/simnalamburt/cgitc
 package nvm
-package virtualfish
 package z
 theme agnoster
 theme default
