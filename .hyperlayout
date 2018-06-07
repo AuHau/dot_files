@@ -1,0 +1,4 @@
+{
+	"u_docker": [["", "make up"]],
+    "django": [[[["./manage.py runserver", "gulp"],""]]]
+}
