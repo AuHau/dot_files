@@ -8,47 +8,80 @@ module.exports = {
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'canary',
 
-    // default font size in pixels for all tabs
-    fontSize: 14,
 
-    // font family with optional fallbacks
+    /*
+     * STYLING
+     */
+    fontSize: 12,
     fontFamily: '"Roboto Mono for Powerline"',
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
-
-    // terminal text color under BLOCK cursor
+    cursorColor: 'rgba(0, 150, 136, .5)',
     cursorAccentColor: '#000',
-
-    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BLOCK',
-
-    // set to `true` (without backticks and without quotes) for blinking cursor
+    cursorShape: 'BLOCK', // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorBlink: true,
 
-    // color of the text
-    foregroundColor: '#fff',
-
-    // terminal background color
-    // opacity is only supported on macOS
-    backgroundColor: '#000',
-
-    // terminal selection color
+    foregroundColor: '#ECEFF1',
+    backgroundColor: '#263238',
     selectionColor: 'rgba(248,28,229,0.3)',
+    borderColor: '#222d32',
 
-    // border color (window, tabs)
-    borderColor: '#333',
+    padding: '5px 10px 15px 10px',
 
-    // custom CSS to embed in the main window
-    css: '',
+    colors: {
+      black: '#263238',
+      red: '#FF5252',
+      green: '#9CCC65',
+      yellow: '#fee94e',
+      blue: '#2b98f0',
+      magenta: '#b38bfc',
+      cyan: '#68b6f3',
+      white: '#ECEFF1',
+      lightBlack: '#617d8a',
+      lightRed: '#fc625d',
+      lightGreen: '#9CCC65',
+      lightYellow: '#fee94e',
+      lightBlue: '#2b98f0',
+      lightMagenta: '#b38bfc',
+      lightCyan: '#68b6f3',
+      lightWhite: '#ffffff'
+    },
 
-    // custom CSS to embed in the terminal window
     termCSS: '\
 ::-webkit-scrollbar-thumb {\
         border-radius: 4px;\
         background-color:rgba(255, 255, 255, 0.5);\
 }\
     ',
+
+    css: `
+      .hyper_main {
+        border: none !important;
+      }
+      .header_header {
+        background: #222d32 !important;
+        z-index:0;
+      }
+      .tab_tab {
+        border: 0;
+      }
+      .tab_textActive {
+        border-bottom: 2px solid #009688;
+      }
+      .splitpane_divider {
+        background-color: rgba(170, 187, 195, 0.16) !important;
+      }
+      .terms_terms{
+        background-color: #263238;
+      }
+      .term_term {
+        opacity: 0.5;
+        transition: opacity 0.15s ease-in-out;
+        will-change: opacity;
+      }
+      .term_active .term_term {
+        opacity: 1;
+      }
+    `,
 
     // set to `true` (without backticks and without quotes) if you're using a
     // Linux setup that doesn't show native menus
@@ -58,32 +91,8 @@ module.exports = {
     // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
-    showWindowControls: false,
+    showWindowControls: true,
 
-    // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
-
-    // the full list. if you're going to provide the full color palette,
-    // including the 6 x 6 color cubes and the grayscale map, just provide
-    // an array here instead of a color map object
-    colors: {
-      black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
-      white: '#d0d0d0',
-      lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
-      lightWhite: '#ffffff',
-    },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -97,7 +106,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: '/usr/local/bin/fish',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -160,19 +169,25 @@ module.exports = {
         fontSize: '10px'
       },
       focusOnMouseHover: false
-    }
-  },
+    },
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
-  plugins: ['hyperline#1.0.0-beta.2', // Currently unsupported on canary :(
-//'hyperterm-visor', // Currently unsupported on canary :(
-//'hyperlinks', 'hyperterm-paste',
-  'hyperterm-material', 'hyperminimal', 'hypercwd', 'hyperlinks', 'hyper-search', "hyperlayout", "hyper-pane@next"],
+    hyperline:{
+      plugins:[
+        'hostname', 'ip', 'memory', 'battery', 'cpu', 'network'
+      ]
+    },
+
+  },
+  
+  plugins: [
+    'hyperline', 
+    'hyperminimal', 
+    'hypercwd', 
+    'hyperlinks', 
+    'hyper-search', 
+    "hyperlayout", 
+    "hyper-pane@next"
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
