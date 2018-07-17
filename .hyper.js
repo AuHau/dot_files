@@ -120,6 +120,8 @@ module.exports = {
     // set to `false` for no bell
     bell: 'SOUND',
 
+    scrollback: 5000, // buffer size
+
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
 
