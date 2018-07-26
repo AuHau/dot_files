@@ -12,7 +12,7 @@ module.exports = {
     /*
      * STYLING
      */
-    fontSize: 13,
+    fontSize: 14,
     fontFamily: '"Roboto Mono for Powerline"',
 
     cursorColor: 'rgba(0, 150, 136, .5)',
