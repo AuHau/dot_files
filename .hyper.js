@@ -12,7 +12,7 @@ module.exports = {
     /*
      * STYLING
      */
-    fontSize: 12,
+    fontSize: 13,
     fontFamily: '"Roboto Mono for Powerline"',
 
     cursorColor: 'rgba(0, 150, 136, .5)',
@@ -106,11 +106,11 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/usr/local/bin/fish',
+    shell: '/usr/bin/env',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ['--login'],
+    shellArgs: ['fish'],
 
     // for environment variables
     env: {
@@ -140,11 +140,11 @@ module.exports = {
 
     visor: {
       hotkey: 'F12',
-      position: 'top', // or left, right, bottom 
-      width: '100%', // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical 
-      height: '50%', // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal 
+      position: 'top', // or left, right, bottom
+      width: '100%', // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical
+      height: '50%', // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal
     },
-    
+
     hyperlinks: {
       clickAction: 'open',
       defaultBrowser: true
@@ -180,14 +180,14 @@ module.exports = {
     },
 
   },
-  
+
   plugins: [
-    'hyperline', 
-    'hyperminimal', 
-    'hypercwd', 
-    'hyperlinks', 
-    'hyper-search', 
-    "hyperlayout", 
+    'hyperline',
+    'hyperminimal',
+    'hypercwd',
+    'hyperlinks',
+    'hyper-search',
+    "hyperlayout",
     "hyper-pane@next"
   ],
 
