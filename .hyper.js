@@ -106,11 +106,11 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/usr/bin/env',
+    // shell: '/usr/bin/env',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ['fish'],
+    // shellArgs: ['fish'],
 
     // for environment variables
     env: {
