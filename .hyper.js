@@ -81,6 +81,9 @@ module.exports = {
       .term_active .term_term {
         opacity: 1;
       }
+      .xterm {
+        cursor: default;
+      }
     `,
 
     // set to `true` (without backticks and without quotes) if you're using a
