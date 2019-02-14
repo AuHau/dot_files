@@ -34,3 +34,8 @@ set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
 status --is-interactive; and . (pyenv init -|psub)
 status --is-interactive; and . (pyenv virtualenv-init -|psub)
+
+# GPG-Agent
+set GPG_TTY (tty)
+set SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
