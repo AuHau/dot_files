@@ -14,14 +14,19 @@ source ~/.vim_runtime/my_configs.vim
 catch
 endtry
 
+" VUNDLE INIT
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dag/vim-fish'
+"Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()            " required
 filetype plugin indent on 
+" END VUNDLE INIT
 
 syntax enable
 set background=dark

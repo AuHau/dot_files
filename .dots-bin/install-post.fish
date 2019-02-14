@@ -2,7 +2,9 @@
 
 # Install post-script
 
-# Oh-My-Fish
+# Fish
+sudo apt-get install fish
+sudo chsh -s /usr/bin/fish $USER
 curl -L https://get.oh-my.fish | fish
 omf install
 

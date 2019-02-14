@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 git help > /dev/null
 if [ $? != 0 ]; then
     echo "Install Git first!"
