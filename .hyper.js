@@ -6,96 +6,90 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
+    // default font size in pixels for all tabs
+    fontSize: 12,
 
-    /*
-     * STYLING
-     */
-    fontSize: 14,
-    fontFamily: '"Roboto Mono for Powerline"',
+    // font family with optional fallbacks
+    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
-    cursorColor: 'rgba(0, 150, 136, .5)',
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normal',
+
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
+
+    // line height as a relative unit
+    lineHeight: 1,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
+
+    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
+    cursorColor: 'rgba(248,28,229,0.8)',
+
+    // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
-    cursorShape: 'BLOCK', // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorBlink: true,
 
-    foregroundColor: '#ECEFF1',
-    backgroundColor: '#263238',
+    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
+    cursorShape: 'BLOCK',
+
+    // set to `true` (without backticks and without quotes) for blinking cursor
+    cursorBlink: false,
+
+    // color of the text
+    foregroundColor: '#fff',
+
+    // terminal background color
+    // opacity is only supported on macOS
+    backgroundColor: '#000',
+
+    // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
-    borderColor: '#222d32',
 
-    padding: '5px 10px 15px 10px',
+    // border color (window, tabs)
+    borderColor: '#333',
 
-    colors: {
-      black: '#263238',
-      red: '#FF5252',
-      green: '#9CCC65',
-      yellow: '#fee94e',
-      blue: '#2b98f0',
-      magenta: '#b38bfc',
-      cyan: '#68b6f3',
-      white: '#ECEFF1',
-      lightBlack: '#617d8a',
-      lightRed: '#fc625d',
-      lightGreen: '#9CCC65',
-      lightYellow: '#fee94e',
-      lightBlue: '#2b98f0',
-      lightMagenta: '#b38bfc',
-      lightCyan: '#68b6f3',
-      lightWhite: '#ffffff'
-    },
+    // custom CSS to embed in the main window
+    css: '',
 
-    termCSS: '\
-::-webkit-scrollbar-thumb {\
-        border-radius: 4px;\
-        background-color:rgba(255, 255, 255, 0.5);\
-}\
-    ',
+    // custom CSS to embed in the terminal window
+    termCSS: '',
 
-    css: `
-      .hyper_main {
-        border: none !important;
-      }
-      .header_header {
-        background: #222d32 !important;
-        z-index:0;
-      }
-      .tab_tab {
-        border: 0;
-      }
-      .tab_textActive {
-        border-bottom: 2px solid #009688;
-      }
-      .splitpane_divider {
-        background-color: rgba(170, 187, 195, 0.16) !important;
-      }
-      .terms_terms{
-        background-color: #263238;
-      }
-      .term_term {
-        opacity: 0.5;
-        transition: opacity 0.15s ease-in-out;
-        will-change: opacity;
-      }
-      .term_active .term_term {
-        opacity: 1;
-      }
-      .xterm {
-        cursor: default;
-      }
-    `,
-
-    // set to `true` (without backticks and without quotes) if you're using a
-    // Linux setup that doesn't show native menus
-    // default: `false` on Linux, `true` on Windows, ignored on macOS
+    // if you're using a Linux setup which show native menus, set to false
+    // default: `true` on Linux, `true` on Windows, ignored on macOS
     showHamburgerMenu: '',
 
     // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
-    showWindowControls: true,
+    showWindowControls: '',
 
+    // custom padding (CSS format, i.e.: `top right bottom left`)
+    padding: '12px 14px',
+
+    // the full list. if you're going to provide the full color palette,
+    // including the 6 x 6 color cubes and the grayscale map, just provide
+    // an array here instead of a color map object
+    colors: {
+      black: '#000000',
+      red: '#C51E14',
+      green: '#1DC121',
+      yellow: '#C7C329',
+      blue: '#0A2FC4',
+      magenta: '#C839C5',
+      cyan: '#20C5C6',
+      white: '#C7C7C7',
+      lightBlack: '#686868',
+      lightRed: '#FD6F6B',
+      lightGreen: '#67F86F',
+      lightYellow: '#FFFA72',
+      lightBlue: '#6A76FB',
+      lightMagenta: '#FD7CFC',
+      lightCyan: '#68FDFE',
+      lightWhite: '#FFFFFF',
+    },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -109,24 +103,23 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    // shell: '/usr/bin/env',
+    shell: '',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    // shellArgs: ['fish'],
+    shellArgs: ['--login'],
 
     // for environment variables
-    env: {
-      "HYPER_PASTE_SEPARATOR": "; and "
-    },
+    env: {},
 
     // set to `false` for no bell
     bell: 'SOUND',
 
-    scrollback: 5000, // buffer size
-
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
+
+    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
 
     // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
     // selection is present (`true` by default on Windows and disables the context menu feature)
@@ -136,63 +129,15 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
-
-    hypercwd: {
-      initialWorkingDirectory: '~'
-    },
-
-    visor: {
-      hotkey: 'F12',
-      position: 'top', // or left, right, bottom
-      width: '100%', // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical
-      height: '50%', // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal
-    },
-
-    hyperlinks: {
-      clickAction: 'open',
-      defaultBrowser: true
-    },
-
-    paneNavigation: {
-      hotkeys: {
-        navigation: {
-          up: 'alt+up',
-          down: 'alt+down',
-          left: 'alt+left',
-          right: 'alt+right'
-        },
-        jump_prefix: 'alt', // completed with 1-9 digits
-        permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
-        maximize: 'meta+enter'
-      },
-      showIndicators: true, // Show pane number
-      indicatorPrefix: '', // Will be completed with pane number
-      indicatorStyle: { // Added to indicator <div>
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        fontSize: '10px'
-      },
-      focusOnMouseHover: false
-    },
-
-    hyperline:{
-      plugins:[
-        'hostname', 'ip', 'memory', 'battery', 'cpu', 'network'
-      ]
-    },
-
   },
 
-  plugins: [
-    'hyperline',
-    'hyperminimal',
-    'hypercwd',
-    'hyperlinks',
-    'hyper-search',
-    "hyperlayout",
-    "hyper-pane@next"
-  ],
+  // a list of plugins to fetch and install from npm
+  // format: [@org/]project[#version]
+  // examples:
+  //   `hyperpower`
+  //   `@company/project`
+  //   `project#1.0.1`
+  plugins: [],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
