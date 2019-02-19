@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 git help > /dev/null
 if [ $? != 0 ]; then
     echo "Install Git first!"
@@ -19,10 +17,17 @@ else
     source="git@github.com:AuHau/dot_files.git"
 fi
 
-git clone -b $branch --bare $source $HOME/.dots
+if [ -d $HOME/.dots ]; then
+    echo ".dots folder already exist! Remove it first."
+    exit 1
+fi
+
+git clone -b $branch --bare $source $HOME/.dots || exit 1
+
 function config {
    /usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME $@
 }
+
 config checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
