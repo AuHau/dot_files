@@ -8,7 +8,13 @@ if [ $? != 0 ]; then
     exit 1
 fi;
 
-git clone --bare git@github.com:AuHau/dot_files.git $HOME/.dots
+branch=$1
+if [ -z "$branch" ]; then
+    branch="master"
+fi
+
+
+git clone -b $branch --bare git@github.com:AuHau/dot_files.git $HOME/.dots
 function config {
    /usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME $@
 }
