@@ -13,7 +13,7 @@ if [ -z "$branch" ]; then
     branch="master"
 fi
 
-if [ $2 = "https"]; then
+if [ $2 = "https" ]; then
     source="https://github.com/AuHau/dot_files.git"
 else
     source="git@github.com:AuHau/dot_files.git"
