@@ -25,10 +25,6 @@ __fish_complete_django manage.py
 
 eval (direnv hook fish)
 
-# GO
-set -x -U GOPATH $HOME/.go
-set -x PATH "$GOPATH/bin" $PATH
-
 # Pyenv
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
@@ -39,3 +35,7 @@ status --is-interactive; and . (pyenv virtualenv-init -|psub)
 set GPG_TTY (tty)
 set SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+
+# GO
+set -gx GOPATH $HOME/go; set -gx GOROOT $HOME/.go; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias gv="$GOPATH/bin/g"
