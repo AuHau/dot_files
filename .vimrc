@@ -43,4 +43,8 @@ hi Normal guibg=NONE ctermbg=NONE
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 
+" Disable mouse
+set mouse=
+set ttymouse=
+
 "au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
