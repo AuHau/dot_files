@@ -22,6 +22,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dag/vim-fish'
+Plugin 'rkitover/vimpager'
 "Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
@@ -42,5 +43,9 @@ hi Normal guibg=NONE ctermbg=NONE
 
 nmap oo o<Esc>k
 nmap OO O<Esc>j
+
+" Disable mouse
+set mouse=
+set ttymouse=
 
 "au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim

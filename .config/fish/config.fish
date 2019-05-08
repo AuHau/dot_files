@@ -1,4 +1,4 @@
-
+# Abbriviations
 abbr -a gulp 'npm-exec gulp'
 abbr -a bower 'npm-exec bower'
 abbr -a s 'sudo'
@@ -8,11 +8,10 @@ abbr -a gloo 'git log --all --decorate --oneline --graph'
 abbr -a gct 'git checkout test'
 abbr -a gpt 'git push; and git push --tags'
 abbr -a jek 'bundle exec jekyll'
-set -Ux EDITOR vim
 
-set -x LESS '--ignore-case --raw-control-chars'
-set -x PAGER 'less'
-set -x EDITOR 'vim'
+# System-wide settings
+set -Ux EDITOR vim
+set -x PAGER '~/.vim/bundle/vimpager/vimpager --no-passthrough'
 
 set GEM_ROOT /var/lib/gems/2.3.0
 
