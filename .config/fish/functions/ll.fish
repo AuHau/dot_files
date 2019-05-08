@@ -12,7 +12,7 @@ function ll
     if test -d $path
         ls -la $path
     else
-        less $path
+        eval $PAGER $path
     end
 end
 

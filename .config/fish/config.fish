@@ -1,4 +1,4 @@
-
+# Abbriviations
 abbr -a gulp 'npm-exec gulp'
 abbr -a bower 'npm-exec bower'
 abbr -a s 'sudo'
@@ -12,11 +12,9 @@ abbr -a o 'xdg-open'
 abbr setclip "xclip -selection c"
 abbr getclip "xclip -selecti   on c -o"
 
+# System-wide settings
 set -Ux EDITOR vim
-
-set -x LESS '--ignore-case --raw-control-chars'
-set -x PAGER 'less'
-set -x EDITOR 'vim'
+set -x PAGER '~/.vim/bundle/vimpager/vimpager --no-passthrough'
 
 set GEM_ROOT /var/lib/gems/2.3.0
 

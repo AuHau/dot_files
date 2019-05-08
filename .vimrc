@@ -22,6 +22,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dag/vim-fish'
+Plugin 'rkitover/vimpager'
 "Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
