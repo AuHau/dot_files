@@ -12,7 +12,7 @@ module.exports = {
     /*
      * STYLING
      */
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: '"Roboto Mono for Powerline"',
 
     cursorColor: 'rgba(0, 150, 136, .5)',
@@ -25,7 +25,7 @@ module.exports = {
     selectionColor: 'rgba(248,28,229,0.3)',
     borderColor: '#222d32',
 
-    padding: '5px 10px 15px 10px',
+    padding: '5px 10px 20px 10px',
 
     colors: {
       black: '#263238',
@@ -161,7 +161,7 @@ module.exports = {
           left: 'alt+left',
           right: 'alt+right'
         },
-        jump_prefix: 'alt', // completed with 1-9 digits
+        jump_prefix: 'ctrl', // completed with 1-9 digits
         permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
         maximize: 'meta+enter'
       },
@@ -177,15 +177,15 @@ module.exports = {
     },
 
     hyperline:{
-      plugins:[
-        'hostname', 'ip', 'memory', 'battery', 'cpu', 'network'
-      ]
+      plugins:{
+        'hostname': 'l', 'ip': 'l', 'memory':'r', 'battery': 'r', 'cpu': 'r', 'network': 'r', 'time': 'c'
+      }
     },
 
   },
 
   plugins: [
-    'hyperline',
+    'hyperline-auhau',
     'hyperminimal',
     'hypercwd',
     'hyperlinks',
