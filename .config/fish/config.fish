@@ -34,6 +34,9 @@ set GPG_TTY (tty)
 set SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# Custom Bins
+set -gx PATH ~/.bin $PATH 
+
 # GO
 set -gx GOPATH $HOME/go; set -gx GOROOT $HOME/.go; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias gv="$GOPATH/bin/g"
