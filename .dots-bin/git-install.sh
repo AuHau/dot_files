@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source common.sh
+
 git help > /dev/null
 if [ $? != 0 ]; then
     echo "Install Git first!"
@@ -29,10 +31,8 @@ function config {
 }
 
 config checkout
-if [ $? = 0 ]; then
-  echo "Checked out config.";
-  else
-    echo "Backing up pre-existing dot files.";
+if [ $? != 0 ]; then
+    tell "Backing up pre-existing dot files.";
     mkdir -p .dots-backup
     DOTS_FILES=`config checkout 2>&1 | egrep "\s+\." | awk {'print $1'}`
     echo "$DOTS_FILES" | grep / |  xargs -I {} dirname {} | xargs -I {} mkdir -p .dots-backup/{}
@@ -40,3 +40,4 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+tell "Git repository setuped.";
