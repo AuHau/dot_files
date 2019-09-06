@@ -40,8 +40,8 @@ function install_cli {
 
     ### Install pip and virtualenv to system's Python so direnv works properly
     tell "Installing pip and virtualenv"
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-    sudo python get-pip.py
+    curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+    sudo python /tmp/get-pip.py
     sudo pip install virtualenv
 
     install "Postgres" "brew install postgres"
@@ -94,6 +94,9 @@ function hardening {
 function configuration {
     # TODO: Ctrl+Left/Right not to change windows
     # TODO: F11, F12 remove completely
+
+    # Press&hold won't show diacricits box
+    defaults write -g ApplePressAndHoldEnabled -bool false
 
     #defaults write -g NSUserKeyEquivalents '{
     #"Mission Control"="\u200b";
