@@ -4,3 +4,7 @@
 	name = Adam Uhlíř
 	email = adam@uhlir.dev
 	signingkey = 5DF6C83ACFBD5247
+[tag]
+	forceSignAnnotated = true
+[commit]
+	gpgsign = true
