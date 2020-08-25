@@ -48,4 +48,10 @@ nmap OO O<Esc>j
 set mouse=
 set ttymouse=
 
+" Set ESC to jk sequence
+imap jk <Esc>
+
 "au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
+
+" VIM Markdown
+let g:vim_markdown_folding_level = 5
