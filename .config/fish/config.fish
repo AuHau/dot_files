@@ -9,6 +9,7 @@ abbr -a gct 'git checkout test'
 abbr -a gpt 'git push; and git push --tags'
 abbr -a jek 'bundle exec jekyll'
 abbr -a o 'xdg-open'
+abbr -a hl 'hyperlayout'
 abbr setclip "xclip -selection c"
 abbr getclip "xclip -selecti   on c -o"
 
@@ -34,12 +35,12 @@ set GPG_TTY (tty)
 set SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# nvm to alias current version
+set -gx NVM_SYMLINK_CURRENT true
+
 # Custom Bins
 set -gx PATH ~/.bin $PATH 
 
 # GO
 set -gx GOPATH $HOME/go; set -gx GOROOT $HOME/.go; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias gv="$GOPATH/bin/g"
-
-# NixOS initiation
-fenv source '$HOME/.nix-profile/etc/profile.d/nix.sh'

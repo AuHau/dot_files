@@ -25,7 +25,7 @@ module.exports = {
     selectionColor: 'rgba(248,28,229,0.3)',
     borderColor: '#222d32',
 
-    padding: '5px 10px 20px 10px',
+    padding: '5px 10px 0px 10px',
 
     colors: {
       black: '#263238',
@@ -72,6 +72,7 @@ module.exports = {
       }
       .terms_terms{
         background-color: #263238;
+        bottom: 25px;
       }
       .term_term {
         opacity: 0.5;
@@ -185,7 +186,7 @@ module.exports = {
   },
 
   plugins: [
-    'hyperline-auhau',
+    //'hyperline-auhau',
     'hyperminimal',
     'hypercwd',
     'hyperlinks',
@@ -197,7 +198,7 @@ module.exports = {
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: [],
+  localPlugins: ['hyperline'],
 
   keymaps: {
     // Example
