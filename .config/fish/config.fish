@@ -17,11 +17,6 @@ abbr getclip "xclip -selecti   on c -o"
 set -Ux EDITOR vim
 set -x PAGER '~/.vim/bundle/vimpager/vimpager --no-passthrough'
 
-set GEM_ROOT /var/lib/gems/2.3.0
-
-__fish_complete_django django-admin.py
-__fish_complete_django manage.py
-
 eval (direnv hook fish)
 
 # Pyenv
@@ -38,8 +33,11 @@ gpgconf --launch gpg-agent
 # nvm to alias current version
 set -gx NVM_SYMLINK_CURRENT true
 
+# Homebrew
+fish_add_path /opt/homebrew/bin
+
 # Custom Bins
-set -gx PATH ~/.bin $PATH 
+fish_add_path ~/.bin
 
 # GO
 set -gx GOPATH $HOME/go; set -gx GOROOT $HOME/.go; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g

@@ -6,7 +6,7 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
 
     /*
@@ -97,7 +97,7 @@ module.exports = {
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
     showWindowControls: true,
 
-    shell: '/usr/local/bin/fish',
+    shell: '/opt/homebrew/bin/fish',
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //

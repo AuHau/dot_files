@@ -11,15 +11,14 @@ source ./common.sh
 # GUI related
 
 function install_gui {
-    install "Hyper" "brew cask install hyper"
-    install "VSCode" "brew cask install visual-studio-code"
-    install "Fonts" "brew tap homebrew/cask-fonts && brew cask install font-roboto-mono-for-powerline"
-    install "Dash" "brew cask install dash"
-    install "Franz" "brew cask install franz"
-    install "IDEs" "brew cask install webstorm pycharm goland"
-    install "NordVPN" "brew cask install nordvpn"
-    install "VLC" "brew cask install vlc"
-    install "Docker" "brew cask install docker"
+    install "Hyper" "brew install --cask hyper"
+    install "VSCode" "brew install --cask visual-studio-code"
+    install "Fonts" "brew tap homebrew/cask-fonts && brew install --cask font-roboto-mono-for-powerline"
+    install "Dash" "brew install --cask dash"
+    install "IDEs" "brew install --cask webstorm pycharm goland"
+    install "NordVPN" "brew install --cask nordvpn"
+    install "VLC" "brew install --cask vlc"
+    install "Docker" "brew install --cask docker"
 }
 
 #########################################################################
@@ -30,7 +29,7 @@ function install_cli {
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     #function updatevim
     #    set -lx SHELL (which sh)
-    #    vim +BundleInstall! +BundleClean +qall
+    #    vim +BundleInstall! +BundleClean +all
     #end
     #updatevim
 
@@ -59,7 +58,7 @@ function install_core {
     ## Go
     curl -sSL https://git.io/g-install | bash
 
-    install "NVM" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash"
+    install "NVM" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
 
     ## Fish shell
     install "Fish" "brew install fish"
