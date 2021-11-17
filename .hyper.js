@@ -97,7 +97,7 @@ module.exports = {
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
     showWindowControls: true,
 
-    shell: '/opt/homebrew/bin/fish',
+    // shell: '',
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //
