@@ -1,21 +1,16 @@
 # Abbriviations
-abbr -a gulp 'npm-exec gulp'
-abbr -a bower 'npm-exec bower'
 abbr -a s 'sudo'
 abbr -a sai 'sudo apt-get install'
 abbr -a gt 'git tag'
 abbr -a gloo 'git log --all --decorate --oneline --graph'
 abbr -a gct 'git checkout test'
 abbr -a gpt 'git push; and git push --tags'
-abbr -a jek 'bundle exec jekyll'
-abbr -a o 'xdg-open'
 abbr -a hl 'hyperlayout'
-abbr setclip "xclip -selection c"
-abbr getclip "xclip -selecti   on c -o"
 
 # System-wide settings
 set -Ux EDITOR vim
 set -x PAGER '~/.vim/bundle/vimpager/vimpager --no-passthrough'
+set -x pager '~/.vim/bundle/vimpager/vimpager --no-passthrough'
 
 eval (direnv hook fish)
 
@@ -24,6 +19,9 @@ set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
 status --is-interactive; and . (pyenv init -|psub)
 status --is-interactive; and . (pyenv virtualenv-init -|psub)
+
+# My GPG key
+set -x GPG_ME 0x5DF6C83ACFBD5247
 
 # GPG-Agent
 set GPG_TTY (tty)
