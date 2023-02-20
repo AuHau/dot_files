@@ -1,11 +1,7 @@
 # Abbriviations
-abbr -a s 'sudo'
-abbr -a sai 'sudo apt-get install'
 abbr -a gt 'git tag'
 abbr -a gloo 'git log --all --decorate --oneline --graph'
-abbr -a gct 'git checkout test'
 abbr -a gpt 'git push; and git push --tags'
-abbr -a hl 'hyperlayout'
 
 # System-wide settings
 set -Ux EDITOR vim
@@ -33,11 +29,25 @@ gpgconf --launch gpg-agent
 set -gx NVM_SYMLINK_CURRENT true
 
 # Homebrew
-fish_add_path /opt/homebrew/bin
+fish_add_path ~/homebrew/bin
 
 # Custom Bins
 fish_add_path ~/.bin
 
+# Nim a Nimble
+fish_add_path ~/.nimble/bin
+
 # GO
 set -gx GOPATH $HOME/go; set -gx GOROOT $HOME/.go; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias gv="$GOPATH/bin/g"
+
+# Gems
+fish_add_path ~/Packages/gem/bin
+set -x GEM_HOME "$HOME/Packages/gem"
+set -x GEM_PATH "$HOME/Packages/gem"
+fish_add_path /Users/adam/homebrew/opt/ruby/bin
+status --is-interactive; and rbenv init - fish | source
+fish_add_path /Users/adam/.gem/ruby/3.0.0/bin
+
+# Secrets
+source (status dirname)/config.secrets.fish

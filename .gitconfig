@@ -8,3 +8,5 @@
 	forceSignAnnotated = true
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master
