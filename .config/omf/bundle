@@ -1,7 +1,5 @@
 package foreign-env
-package gem
 package https://github.com/AuHau/cgitc
-package nvm
 package z
 theme agnoster
 theme default
