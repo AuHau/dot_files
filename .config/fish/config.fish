@@ -15,7 +15,6 @@ set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
 status --is-interactive; and . (pyenv init -|psub)
 status --is-interactive; and . (pyenv virtualenv-init -|psub)
-fish_add_path ~/Library/Python/3.9/bin/
 
 # My GPG key
 set -x GPG_ME 0x5DF6C83ACFBD5247
