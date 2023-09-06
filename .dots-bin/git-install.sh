@@ -49,7 +49,7 @@ if [ -d $HOME/.dots ]; then
     exit 1
 fi
 
-git clone --recurse-submodules -b $branch --bare $source $HOME/.dots || exit 1
+git clone --recursive -b $branch --bare $source $HOME/.dots || exit 1
 
 function config {
    /usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME $@
