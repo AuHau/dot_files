@@ -5,8 +5,8 @@ abbr -a gpt 'git push; and git push --tags'
 
 # System-wide settings
 set -Ux EDITOR vim
-set -x PAGER '~/.vim/bundle/vimpager/vimpager --no-passthrough'
-set -x pager '~/.vim/bundle/vimpager/vimpager --no-passthrough'
+set -x PAGER '/Users/adam/.vim/bundle/vimpager/vimpager --no-passthrough'
+set -x pager '/Users/adam/.vim/bundle/vimpager/vimpager --no-passthrough'
 
 eval (direnv hook fish)
 
@@ -35,6 +35,9 @@ fish_add_path ~/.bin
 
 # Nim a Nimble
 fish_add_path ~/.nimble/bin
+
+# Cargo bins
+fish_add_path ~/.cargo/bin
 
 # GO
 set -gx GOPATH $HOME/go; set -gx GOROOT $HOME/.go; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g
