@@ -16,8 +16,7 @@ function install_gui {
     install "Fonts" "brew tap homebrew/cask-fonts && brew install --cask font-roboto-mono-for-powerline"
     install "Dash" "brew install --cask dash"
     install "IDEs" "brew install --cask webstorm pycharm goland"
-    install "NordVPN" "brew install --cask nordvpn"
-    install "VLC" "brew install --cask vlc"
+    install "VLC" "brew install --cask iina"
     install "Docker" "brew install --cask docker"
 }
 
@@ -45,6 +44,7 @@ function install_cli {
 
     install "Postgres" "brew install postgres"
     install "GPG" "brew install gnupg pinentry-mac"
+    touch ~/.config/fish/config.secrets.fish
 }
 
 
@@ -58,14 +58,13 @@ function install_core {
     ## Go
     curl -sSL https://git.io/g-install | bash
 
-    install "NVM" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
+    install "NVM" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash"
 
     ## Fish shell
     install "Fish" "brew install fish"
     tell "Changing default shell to Fish"
     sudo chsh -s /usr/bin/fish
-    install "Oh-My-Fish" "curl -L https://get.oh-my.fish | fish"
-
+    install "Oh-My-Fish" "curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish"
     install "Node" "fish \"nvm install node\""
 
 }
