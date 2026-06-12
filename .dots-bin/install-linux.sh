@@ -1,29 +1,29 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 
-# Configuration
-NVM_DIR="~/.nvm"
+#set -o errexit
 
-# Install post-script
+## TODO: Proper error handling
+
+source ./common.sh
+
 
 ## Fish
-sudo apt-get install fish 
+sudo apt-get install fish direnv
 sudo chsh -s /usr/bin/fish $USER
-curl -L https://get.oh-my.fish | fish
-#omf install ### LOOKS LIKE NOT NECESSARRY AS INSTALLED 
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
 
 ## Install NVM (node version manager) & NodeJS
-mkdir -p $NVM_DIR
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-#omf install nvm ### ALREADY INSTALLED WITH omf install
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
 nvm install node
 
-## Install NPM packages
-npm install -g hyperlayout 
+## Pyenv
+curl -fsSL https://pyenv.run | bash
 
 ## Update and install Vundle packages
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 function updatevim
-    set -lx SHELL (which sh)
+    export SHELL (which sh)
     vim +BundleInstall! +BundleClean +qall
 end
 updatevim()
