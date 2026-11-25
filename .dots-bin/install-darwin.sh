@@ -13,7 +13,7 @@ source ./common.sh
 function install_gui {
     install "Hyper" "brew install --cask hyper"
     install "VSCode" "brew install --cask visual-studio-code"
-    install "Fonts" "brew tap homebrew/cask-fonts && brew install --cask font-roboto-mono-for-powerline"
+    install "Fonts" "brew install --cask font-roboto-mono-nerd-font"
     install "Dash" "brew install --cask dash"
     install "IDEs" "brew install --cask webstorm pycharm goland"
     install "VLC" "brew install --cask iina"
